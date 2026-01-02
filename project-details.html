@@ -271,6 +271,36 @@
             transform: translateY(-3px);
             background: var(--card);
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90vw;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-cover {
+                height: 200px;
+                font-size: 3rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
 
