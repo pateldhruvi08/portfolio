@@ -916,7 +916,169 @@
             gap: 1rem;
         }
 
-        /* Mobile media query removed as it is now default */
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                padding-top: 120px;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-location {
+                margin: 0 auto 1.4rem;
+            }
+
+            .profile-summary,
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .meta {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Nav Actions (Theme Toggle + Hamburger) */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+
+            /* Mobile Navigation Refactor */
+            nav {
+                width: 100%;
+                max-width: 100%;
+                top: 0;
+                left: 0;
+                transform: none;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid var(--border);
+                background: var(--nav-bg);
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-inner {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            /* Navigation Links - Hidden by Default on Mobile */
+            .nav-links {
+                width: 100%;
+                flex-direction: column;
+                gap: 0.5rem;
+                background: var(--surface);
+                border-top: 1px solid var(--border);
+                padding: 1rem 0;
+                margin-top: 1rem;
+                border-radius: 0 0 16px 16px;
+
+                /* Transition Setup */
+                display: none;
+                /* JS will toggle this to flex */
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.mobile-visible {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem;
+                border-radius: 8px;
+            }
+
+            /* Hide CTA button on mobile */
+            .nav-cta {
+                display: none;
+            }
+
+            /* Adjust Hero Padding */
+            .hero {
+                padding-top: 140px;
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .portrait {
+                width: 250px;
+                height: 250px;
+                margin: 0 auto;
+            }
+
+            .meta {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .project-header-row {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .more-detail-link {
+                align-self: flex-start;
+            }
+
+            .container {
+                width: 90vw;
+            }
+        }
 
         .btn-submit {
             width: 100%;
@@ -1086,7 +1248,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <a class="nav-cta" href="#contact">Let’s talk →</a>
-            <button class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button class="hamburger" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+            </div>
         </div>
     </nav>
 
@@ -1523,6 +1688,35 @@
                     localStorage.setItem('theme', 'dark');
                 }
             });
+
+            // Hamburger Menu Logic
+            const hamburger = document.querySelector('.hamburger');
+            const navLinksContainer = document.querySelector('.nav-links');
+            const hamburgerIcon = hamburger.querySelector('i');
+
+            if (hamburger && navLinksContainer) {
+                hamburger.addEventListener('click', () => {
+                    navLinksContainer.classList.toggle('mobile-visible');
+
+                    // Toggle Icon
+                    if (navLinksContainer.classList.contains('mobile-visible')) {
+                        hamburgerIcon.classList.remove('fa-bars');
+                        hamburgerIcon.classList.add('fa-times');
+                    } else {
+                        hamburgerIcon.classList.remove('fa-times');
+                        hamburgerIcon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close menu when a link is clicked
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinksContainer.classList.remove('mobile-visible');
+                        hamburgerIcon.classList.remove('fa-times');
+                        hamburgerIcon.classList.add('fa-bars');
+                    });
+                });
+            }
         });
     </script>
 </body>
