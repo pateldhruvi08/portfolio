@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Dhruvi Patel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* DARK MODE - Elegant & Moody */
+            --bg: #1a1625;
+            --surface: rgba(255, 255, 255, 0.03);
+            --card: rgba(255, 255, 255, 0.04);
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #f3e8ff;
+            --muted: #a78bfa;
+            --accent: #e879f9;
+            --accent-2: #818cf8;
+            --border: rgba(232, 121, 249, 0.2);
+            --shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+            --nav-bg: rgba(26, 22, 37, 0.95);
+            --glow-1: rgba(232, 121, 249, 0.15);
+            --glow-2: rgba(129, 140, 248, 0.15);
+            --on-accent: #13111c;
+            --brand-shadow: rgba(232, 121, 249, 0.3);
+        }
+
+        .light-mode {
+            /* LIGHT MODE - Clean & Floral */
+            --bg: #fff5f9;
+            --surface: #ffffff;
+            --card: #ffffff;
+            --glass: rgba(219, 39, 119, 0.05);
+            --text: #4a044e;
+            --muted: #86198f;
+            --accent: #db2777;
+            --accent-2: #9333ea;
+            --border: rgba(219, 39, 119, 0.15);
+            --shadow: 0 10px 40px rgba(219, 39, 119, 0.1);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --glow-1: rgba(219, 39, 119, 0.08);
+            --glow-2: rgba(147, 51, 234, 0.08);
+            --on-accent: #ffffff;
+            --brand-shadow: rgba(219, 39, 119, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            background: radial-gradient(120% 120% at 20% 20%, var(--glow-1), transparent 35%),
+                radial-gradient(120% 120% at 80% 0%, var(--glow-2), transparent 35%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            width: min(800px, 92vw);
+            margin: 0 auto;
+            padding: 40px 0 80px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(1100px, 92vw);
+            margin: 0 auto;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateX(-4px);
+        }
+
+        /* Project Content */
+        .project-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .project-title {
+            font-family: "Outfit", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-tag {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .project-cover {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(232, 121, 249, 0.1), rgba(129, 140, 248, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            margin-bottom: 2.5rem;
+            color: var(--accent);
+            font-size: 4rem;
+        }
+
+        .content-block {
+            font-size: 1.1rem;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+
+        .content-block h2 {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .content-block p {
+            margin-bottom: 1rem;
+            color: var(--muted);
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-block li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--muted);
+        }
+
+        .content-block li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            margin-top: 40px;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: var(--on-accent);
+            border: none;
+            box-shadow: 0 4px 15px var(--glow-1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--glow-1);
+        }
+
+        .btn-outline {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            background: var(--card);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="portfolio.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <main class="container" id="projectContent">
+        <!-- Dynamic Content Loaded Here -->
+    </main>
+
+    <footer>
+        © 2025 Dhruvi Patel · Project Details
+    </footer>
+
+    <script>
+        // Project Data Storage
+        const projectsData = {
+            "employee-management-system": {
+                title: "Employee Management System",
+                icon: "fas fa-users-cog",
+                tags: ["FastAPI", "PostgreSQL", "React", "JWT"],
+                description: "A comprehensive solution designed to streamline HR operations. This system handles the entire employee lifecycle from onboarding to exit, including attendance tracking, leave management, and performance reviews.",
+                features: [
+                    "Role-Based Access Control (RBAC) specifically tailored for Admin, HR, and Employee roles.",
+                    "Automated attendance tracking integrated with biometric system APIs.",
+                    "Secure JWT authentication ensuring data privacy and session management.",
+                    "Real-time dashboard for HR analytics and reporting."
+                ],
+                techStack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "React.js", "Docker"],
+                githubLink: "https://github.com/dhruvipatel/employee-management", /* Placeholder */
+                liveLink: "#"
+            },
+            "dashboard-blinkit": {
+                title: "Dashboard for Blinkit",
+                icon: "fas fa-chart-line",
+                tags: ["Python", "Pandas", "Plotly", "Data Analysis"],
+                description: "An interactive analytics dashboard built to visualize Blinkit's operational data. It provides actionable insights into sales trends, delivery times, and customer behavior patterns.",
+                features: [
+                    "Visualized monthly sales growth and category-wise performance.",
+                    "Customer segmentation analysis based on purchasing habits.",
+                    "Delivery heatmaps to identify high-demand zones.",
+                    "Automated data cleaning pipelines using Pandas."
+                ],
+                techStack: ["Python", "Pandas", "Matplotlib", "Streamlit", "Jupyter"],
+                githubLink: "https://github.com/dhruvipatel/blinkit-dashboard",
+                liveLink: "#"
+            },
+            "invoice-digitization": {
+                title: "Invoice Digitization",
+                icon: "fas fa-file-invoice",
+                tags: ["OCR", "Python", "Automation", "NLP"],
+                description: "A Python-based automation tool that extracts structured data from scanned invoices and receipts. It reduces manual entry errors and speeds up the accounting reconciliation process.",
+                features: [
+                    "Optical Character Recognition (OCR) implementation using Tesseract.",
+                    "Regex-based pattern matching for invoice numbers and dates.",
+                    "Validation logic to flag discrepancies in total amounts.",
+                    "Export functionality to CSV and Excel formats for ERP integration."
+                ],
+                techStack: ["Python", "Tesseract OCR", "OpenCV", "Regular Expressions"],
+                githubLink: "https://github.com/dhruvipatel/invoice-digitizer",
+                liveLink: "#"
+            },
+            "ecommerce-jewellery": {
+                title: "E-Commerce Jewellery Shop",
+                icon: "fas fa-gem",
+                tags: ["Django", "Stripe", "PostgreSQL", "AWS"],
+                description: "A full-featured e-commerce platform built for a boutique jewellery brand. It focuses on a luxurious user experience, secure transactions, and robust inventory management.",
+                features: [
+                    "Dynamic product catalog with filtering by material, price, and collection.",
+                    "Secure payment gateway integration with Stripe.",
+                    "User profile management with order history and wishlist.",
+                    "Admin panel for easy inventory updates and order processing."
+                ],
+                techStack: ["Django", "Python", "Stripe API", "PostgreSQL", "AWS S3"],
+                githubLink: "https://github.com/dhruvipatel/ecommerce-jewellery",
+                liveLink: "https://jewellery-shop-demo.com"
+            }
+        };
+
+        // Render Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const projectId = params.get('id');
+            const data = projectsData[projectId];
+            const container = document.getElementById('projectContent');
+
+            // Apply Theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+            }
+
+            if (data) {
+                container.innerHTML = `
+                    <header class="project-header">
+                        <h1 class="project-title">${data.title}</h1>
+                        <div class="project-meta">
+                            ${data.tags.map(tag => `<span class="meta-tag">${tag}</span>`).join('')}
+                        </div>
+                        <div class="action-buttons">
+                            <a href="${data.githubLink}" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Code</a>
+                            <a href="${data.liveLink}" target="_blank" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </header>
+
+                    <div class="project-cover">
+                        <i class="${data.icon}"></i>
+                    </div>
+
+                    <div class="content-block">
+                        <h2>Overview</h2>
+                        <p>${data.description}</p>
+                    </div>
+
+                    <div class="content-block">
+                        <h2>Key Features</h2>
+                        <ul>
+                            ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="content-block">
+                        <h2>Technology Stack</h2>
+                        <div class="tech-grid">
+                            ${data.techStack.map(tech => `<div class="tech-item">${tech}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 4rem;">
+                        <h1 style="color: var(--accent); margin-bottom: 1rem;">Project Not Found</h1>
+                        <p style="color: var(--muted);">The project you are looking for does not exist.</p>
+                        <a href="portfolio.html" class="back-btn" style="margin-top: 2rem;">Return Home</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>

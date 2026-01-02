@@ -14,64 +14,94 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         :root {
-            --bg: #0f1720;
-            /* deep charcoal for dark mode */
+            /* DARK MODE - Elegant & Moody */
+            --bg: #1a1625;
+            /* Deep Eggplant/Charcoal */
             --surface: rgba(255, 255, 255, 0.03);
             --card: rgba(255, 255, 255, 0.04);
-            --glass: rgba(255, 255, 255, 0.06);
-            --text: #e8f1ec;
-            /* soft off-white for readability */
-            --muted: #9fb3a6;
-            /* gentle desaturated sage */
-            --accent: #7fb98d;
-            /* primary sage green */
-            --accent-2: #3f6f55;
-            /* deeper moss for gradients */
-            --accent-experience: #7fb98d;
-            /* experience green */
-            --accent-experience-2: #3f6f55;
-            --accent-projects: #6fa8ff;
-            /* projects blue */
-            --accent-projects-2: #2f6fd1;
-            --accent-education: #ffb86b;
-            /* education amber */
-            --bg: #0b1021;
-            --surface: rgba(255, 255, 255, 0.06);
-            --card: rgba(255, 255, 255, 0.08);
-            --glass: rgba(255, 255, 255, 0.12);
-            --text: #e9ecf5;
-            --muted: #9aa4c5;
-            --accent: #7c5dff;
-            --accent-2: #3dd6ed;
-            --accent-experience: #7c5dff;
-            --accent-experience-2: #3dd6ed;
-            --accent-projects: #7c5dff;
-            --accent-projects-2: #3dd6ed;
-            --accent-education: #7c5dff;
-            --accent-education-2: #3dd6ed;
-            --border: rgba(255, 255, 255, 0.12);
-            --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
-            --nav-bg: linear-gradient(90deg, rgba(11, 16, 33, 0.9), rgba(11, 16, 33, 0.75));
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #f3e8ff;
+            /* Pale Lilac White */
+            --muted: #a78bfa;
+            /* Soft Violet Muted */
+
+            /* Feminine Accents - Pastel & Dreamy */
+            --accent: #e879f9;
+            /* Orchid Pink */
+            --accent-2: #818cf8;
+            /* Soft Indigo */
+
+            --accent-experience: #e879f9;
+            --accent-experience-2: #818cf8;
+            --accent-projects: #e879f9;
+            --accent-projects-2: #818cf8;
+            --accent-education: #e879f9;
+            --accent-education-2: #818cf8;
+
+            --border: rgba(232, 121, 249, 0.2);
+            --shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+            --nav-bg: linear-gradient(90deg, rgba(26, 22, 37, 0.9), rgba(26, 22, 37, 0.8));
+
+            /* Sync Vars */
+            --on-accent: #ffffff;
+            --brand-shadow: rgba(232, 121, 249, 0.4);
+            --glow-1: rgba(232, 121, 249, 0.15);
+            --glow-2: rgba(129, 140, 248, 0.15);
+            --portrait-bg: rgba(232, 121, 249, 0.05);
+            --portrait-shadow: rgba(232, 121, 249, 0.2);
+            --hero-glow: rgba(232, 121, 249, 0.1);
+            --btn-primary-shadow: rgba(232, 121, 249, 0.3);
+            --card-hover-bg: rgba(255, 255, 255, 0.08);
+            --card-hover-shadow: rgba(232, 121, 249, 0.15);
+            --contact-icon-bg: linear-gradient(135deg, rgba(232, 121, 249, 0.2), rgba(129, 140, 248, 0.2));
+            --social-btn-hover-bg: linear-gradient(135deg, rgba(232, 121, 249, 0.15), rgba(129, 140, 248, 0.15));
+            --project-media-bg: linear-gradient(135deg, rgba(232, 121, 249, 0.2), rgba(129, 140, 248, 0.2));
         }
 
         .light-mode {
-            --bg: #f8faff;
+            /* LIGHT MODE - Clean, Floral, & Airy */
+            --bg: #fff5f9;
+            /* Very Pale Pink/Rose Background */
             --surface: #ffffff;
             --card: #ffffff;
-            --glass: rgba(124, 93, 255, 0.05);
-            --text: #1a1f36;
-            --muted: #64748b;
-            --accent: #7c5dff;
-            --accent-2: #3dd6ed;
-            --accent-experience: #7c5dff;
-            --accent-experience-2: #3dd6ed;
-            --accent-projects: #7c5dff;
-            --accent-projects-2: #3dd6ed;
-            --accent-education: #7c5dff;
-            --accent-education-2: #3dd6ed;
-            --border: rgba(0, 0, 0, 0.08);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --glass: rgba(219, 39, 119, 0.05);
+
+            --text: #4a044e;
+            /* Deep Blackberry text for strong contrast */
+            --muted: #86198f;
+            /* Medium Fuchsia-Grey */
+
+            /* Feminine Accents - Bold & Floral */
+            --accent: #db2777;
+            /* Deep Pink (Rose) */
+            --accent-2: #9333ea;
+            /* Rich Purple */
+
+            --accent-experience: #db2777;
+            --accent-experience-2: #9333ea;
+            --accent-projects: #db2777;
+            --accent-projects-2: #9333ea;
+            --accent-education: #db2777;
+            --accent-education-2: #9333ea;
+
+            --border: rgba(219, 39, 119, 0.15);
+            --shadow: 0 10px 40px rgba(219, 39, 119, 0.1);
             --nav-bg: rgba(255, 255, 255, 0.85);
+
+            /* Sync Vars */
+            --on-accent: #ffffff;
+            --brand-shadow: rgba(219, 39, 119, 0.2);
+            --glow-1: rgba(219, 39, 119, 0.08);
+            --glow-2: rgba(147, 51, 234, 0.08);
+            --portrait-bg: rgba(219, 39, 119, 0.05);
+            --portrait-shadow: rgba(219, 39, 119, 0.15);
+            --hero-glow: rgba(219, 39, 119, 0.06);
+            --btn-primary-shadow: rgba(219, 39, 119, 0.25);
+            --card-hover-bg: #ffffff;
+            --card-hover-shadow: rgba(219, 39, 119, 0.12);
+            --contact-icon-bg: linear-gradient(135deg, rgba(219, 39, 119, 0.1), rgba(147, 51, 234, 0.1));
+            --social-btn-hover-bg: linear-gradient(135deg, rgba(219, 39, 119, 0.1), rgba(147, 51, 234, 0.1));
+            --project-media-bg: linear-gradient(135deg, rgba(219, 39, 119, 0.1), rgba(147, 51, 234, 0.1));
         }
 
         * {
@@ -82,13 +112,57 @@
 
         body {
             font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-            background: radial-gradient(120% 120% at 20% 20%, rgba(124, 93, 255, 0.18), transparent 35%),
-                radial-gradient(120% 120% at 80% 0%, rgba(61, 214, 237, 0.18), transparent 35%),
-                var(--bg);
+            background-color: var(--bg);
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
             transition: background 0.3s ease, color 0.3s ease;
+            position: relative;
+        }
+
+        /* Animated Background Orbs */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        body::before {
+            background: var(--glow-1);
+            width: 50vw;
+            height: 50vh;
+            top: -10%;
+            left: -10%;
+            animation-duration: 25s;
+        }
+
+        body::after {
+            background: var(--glow-2);
+            width: 40vw;
+            height: 40vh;
+            bottom: -5%;
+            right: -5%;
+            animation-direction: alternate-reverse;
+            animation-duration: 20s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-30px, -20px) scale(0.9);
+            }
         }
 
         /* Global Styling Enhancements */
@@ -185,7 +259,7 @@
             font-weight: 800;
             letter-spacing: 0.5px;
             line-height: 1.2;
-            text-shadow: 0 0 30px rgba(124, 93, 255, 0.3);
+            text-shadow: 0 0 30px var(--brand-shadow);
             position: relative;
         }
 
@@ -230,8 +304,8 @@
         }
 
         .nav-links a.active {
-            background: rgba(124, 93, 255, 0.1);
-            border: 1px solid rgba(124, 93, 255, 0.3);
+            background: var(--glow-1);
+            border: 1px solid var(--accent);
             color: var(--accent);
         }
 
@@ -347,8 +421,8 @@
         .btn.primary {
             background: linear-gradient(135deg, var(--accent), var(--accent-2));
             border-color: transparent;
-            color: #0b1021;
-            box-shadow: 0 15px 45px rgba(124, 93, 255, 0.35);
+            color: var(--on-accent);
+            box-shadow: 0 15px 45px var(--btn-primary-shadow);
         }
 
         .btn:hover {
@@ -400,11 +474,11 @@
             border-radius: 50%;
             border: 2px solid var(--accent);
             padding: 6px;
-            background: rgba(124, 93, 255, 0.05);
+            background: var(--portrait-bg);
             margin-bottom: 0;
             position: relative;
             /* Ensure stacking context */
-            box-shadow: 0 0 50px rgba(124, 93, 255, 0.2);
+            box-shadow: 0 0 50px var(--portrait-shadow);
             flex-shrink: 0;
             z-index: 10;
         }
@@ -418,7 +492,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: radial-gradient(circle, rgba(124, 93, 255, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--hero-glow) 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
         }
@@ -532,9 +606,9 @@
 
         .card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.09);
+            background: var(--card-hover-bg);
             border-color: var(--accent);
-            box-shadow: 0 10px 40px rgba(124, 93, 255, 0.15);
+            box-shadow: 0 10px 40px var(--card-hover-shadow);
         }
 
         .card .time {
@@ -603,10 +677,10 @@
         }
 
         .chip.filled {
-            background: linear-gradient(135deg, #96b89b, #607d6b);
-            color: #fff;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: var(--on-accent);
             border: none;
-            box-shadow: 0 4px 15px rgba(150, 184, 155, 0.3);
+            box-shadow: 0 4px 15px var(--glow-1);
         }
 
         .chip.filled:hover {
@@ -631,11 +705,11 @@
 
         .project-media {
             height: 160px;
-            background: linear-gradient(135deg, rgba(124, 93, 255, 0.35), rgba(61, 214, 237, 0.35));
+            background: var(--project-media-bg);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #0b1021;
+            color: var(--text);
             font-weight: 800;
             letter-spacing: 0.6px;
         }
@@ -644,14 +718,46 @@
             padding: 1.1rem;
         }
 
-        .project-body h3 {
-            background: linear-gradient(90deg, var(--accent-2), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            width: fit-content;
+        .project-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+
+        .project-header-row h3 {
+            margin: 0;
             font-size: 1.25rem;
+            line-height: 1.3;
+        }
+
+        .project-header-row h3 a {
+            color: var(--text);
+            /* Keep title readable */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .project-header-row h3 a:hover {
+            color: var(--accent);
+        }
+
+        .more-detail-link {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-2);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            white-space: nowrap;
+            transition: transform 0.2s ease;
+        }
+
+        .more-detail-link:hover {
+            transform: translateX(3px);
+            color: var(--accent);
         }
 
         .project-body p {
@@ -721,7 +827,7 @@
             width: 45px;
             height: 45px;
             border-radius: 12px;
-            background: linear-gradient(135deg, rgba(124, 93, 255, 0.3), rgba(61, 214, 237, 0.3));
+            background: var(--contact-icon-bg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -767,7 +873,7 @@
         }
 
         .social-btn:hover {
-            background: linear-gradient(135deg, rgba(124, 93, 255, 0.2), rgba(61, 214, 237, 0.2));
+            background: var(--social-btn-hover-bg);
             transform: translateY(-2px);
             border-color: var(--accent);
         }
@@ -1053,7 +1159,7 @@
                 <div class="card">
                     <div class="time">Jun 2022 – Aug 2022</div>
                     <h3>AI & Chatbot</h3>
-                    <div class="company">IBM Watson Project · Internship</div>
+                    <div class="company">IBM Skillbuild by CSRBox· Internship</div>
                     <ul>
                         <li>Developed an intelligent AI chatbot leveraging IBM Watson, refining conversational flow and
                             user intent.</li>
@@ -1092,7 +1198,12 @@
             <div class="projects-grid">
                 <div class="project-card animate-on-scroll">
                     <div class="project-body">
-                        <h3>Employee Management System</h3>
+                        <div class="project-header-row">
+                            <h3><a href="project-details.html?id=employee-management-system" target="_blank"
+                                    style="text-decoration: none; color: inherit;">Employee Management System</a></h3>
+                            <a href="project-details.html?id=employee-management-system" target="_blank"
+                                class="more-detail-link">More Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
                         <p>Complete employee management solution with FastAPI backend, featuring employee CRUD
                             operations, attendance tracking, and role-based access control.</p>
                         <div class="project-tags">
@@ -1103,7 +1214,12 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-body">
-                        <h3>Dashboard for Blinkit</h3>
+                        <div class="project-header-row">
+                            <h3><a href="project-details.html?id=dashboard-blinkit" target="_blank"
+                                    style="text-decoration: none; color: inherit;">Dashboard for Blinkit</a></h3>
+                            <a href="project-details.html?id=dashboard-blinkit" target="_blank"
+                                class="more-detail-link">More Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
                         <p>Interactive data visualization dashboard created with Blinkit dataset, featuring sales
                             analytics, customer insights, and performance metrics using Python data processing
                             libraries.</p>
@@ -1115,7 +1231,12 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-body">
-                        <h3>Invoice Digitization</h3>
+                        <div class="project-header-row">
+                            <h3><a href="project-details.html?id=invoice-digitization" target="_blank"
+                                    style="text-decoration: none; color: inherit;">Invoice Digitization</a></h3>
+                            <a href="project-details.html?id=invoice-digitization" target="_blank"
+                                class="more-detail-link">More Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
                         <p>Automated invoice upload, OCR extraction, and validation with alerting for mismatched
                             business rules.</p>
                         <div class="project-tags">
@@ -1126,7 +1247,12 @@
                 </div>
                 <div class="project-card animate-on-scroll">
                     <div class="project-body">
-                        <h3>E-Commerce Jewellery Shop</h3>
+                        <div class="project-header-row">
+                            <h3><a href="project-details.html?id=ecommerce-jewellery" target="_blank"
+                                    style="text-decoration: none; color: inherit;">E-Commerce Jewellery Shop</a></h3>
+                            <a href="project-details.html?id=ecommerce-jewellery" target="_blank"
+                                class="more-detail-link">More Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
                         <p>Full-featured e-commerce platform for jewellery shop built with Python Django backend,
                             featuring product catalog, shopping cart, user authentication, payment integration, and
                             admin panel. Frontend developed with HTML, CSS, JavaScript, and SQL database for data
